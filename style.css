@@ -225,8 +225,8 @@ footer p {
     margin: 0;
 }
 @media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px)  { 
+  and (min-width: 375px) 
+  and (max-width: 812px)  { 
     header#main-nav {
         text-align: center !important;
     }
