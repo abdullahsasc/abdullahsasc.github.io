@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Noman | Full Stack Developer</title>
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
+        rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/min.style.css">
+</head>
+
+<body class="page blog">
+
+    <!-- header area -->
+    <header id="main-nav" class="fixed">
+        <div class="container">
+            <div class="logo">
+                <a href="#hero">
+                    <h3><span>N</span>oman<span>.</span></h3>
+                </a>
+            </div>
+            <div class="nav">
+                <nav>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#contact">Contact 🚀</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- header area -->
+    <div class="container">
+        <div class="page-title text-center">
+            <h2>WordPress Tips by Noman 👀</h2>
+            <nav class="breadcrumbs">
+                <ul>
+                    <li><a href="index.html">Home ></a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section id="blog">
+        <div class="banner">
+            <img src="img/user-create-function.svg" alt="">
+        </div>
+        <div class="container">
+            <div class="contant">
+                <h3>💫 Adding an Admin User in WordPress Using FTP</h3>
+<p>First thing you will need is an FTP client. If you are new to using FTP, then see our guide on how to use FTP to upload files in WordPress. Once connected to your WordPress site, you need to locate your WordPress theme’s functions.php file. <br>It would be at a location like this: <span class="hightlite">/yoursite.com/wp-content/themes/your-current-theme/functions.php</span> <br>Right click on functions.php file and then select download. Your FTP client will download the functions.php file to your computer.</p>
+                <br>
+                <p>Open the file you just downloaded on your computer using a plain text editor like Notepad. Now you need to add this code at the bottom of the file.</p>
+                <pre>
+                    <code>
+                    function noman_admin_account(){
+                        $user = 'Username';
+                        $pass = 'Password';
+                        $email = 'email@domain.com';
+                        if (!username_exists($user)  && !email_exists($email)) {
+                            $user_id = wp_create_user($user, $pass, $email);
+                            $user = new WP_User($user_id);
+                            $user->set_role('administrator');
+                        }
+                    }
+                    add_action('init', 'noman_admin_account');
+                    </code>
+                </pre>
+                <br>
+                <p>Don’t forget to replace Username, Password, and email@domain.com with your own values. Next, save the file and then upload it back to your website using the FTP client. You can now visit your WordPress site’s login area and sign in with the user account you just added.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="info">
+                <ul>
+                    <li>
+                        <div class="single">
+                            <label for="">Email:</label>
+                            <a href='mailto:nomansasc11@gmail.com'>Click here to send me an email!!!</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="single">
+                            <label for="">UpWork:</label>
+                            <a href='https://www.upwork.com/freelancers/~01c3a7a395d118ef6b'>Abdullah Al Noman</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="single">
+                            <label for="">Skype:</label>
+                            <a href="skype:nomansasc11@outlook.com">Abdullah Al Noman</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="text-align: center;">Thanks 💘💕💐</p>
+    </footer>
+    <a href="https://github.com/abdullahsasc" class="github-corner" aria-label="View source on GitHub"><svg width="67"
+            height="67" viewBox="0 0 250 250"
+            style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);"
+            aria-hidden="true">
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path
+                d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path
+                d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                fill="currentColor" class="octo-body"></path>
+        </svg></a>
+    <style>
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+
+        @keyframes octocat-wave {
+
+            0%,
+            100% {
+                transform: rotate(0)
+            }
+
+            20%,
+            60% {
+                transform: rotate(-25deg)
+            }
+
+            40%,
+            80% {
+                transform: rotate(10deg)
+            }
+        }
+
+        @media (max-width:500px) {
+            .github-corner:hover .octo-arm {
+                animation: none
+            }
+
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92589532-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-92589532-1');
+    </script>
+    <script src="js/min.main.js"></script>
+</body>
+
+</html>
